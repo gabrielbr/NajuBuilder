@@ -1,0 +1,49 @@
+/*
+ * Editor UI styles. The published @chaibuilder/core ships its editor as Tailwind class names
+ * without a compiled stylesheet, so we compile it here: scan the package, map the editor's
+ * theme tokens (defined as HSL triplets in the library's index.css) to Tailwind colors.
+ */
+@import "tailwindcss";
+@source "../../node_modules/@chaibuilder/core/dist";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-surface: hsl(var(--surface));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-info: hsl(var(--info));
+  --color-info-foreground: hsl(var(--info-foreground));
+  --color-purple: hsl(var(--purple));
+  --color-purple-foreground: hsl(var(--purple-foreground));
+  --color-orange: hsl(var(--orange));
+  --color-orange-foreground: hsl(var(--orange-foreground));
+  --color-aqua: hsl(var(--aqua));
+  --color-aqua-foreground: hsl(var(--aqua-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@import "./editor-base.css";
