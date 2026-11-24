@@ -1,0 +1,6 @@
+# Standalone app: keeps pnpm from treating site/ as part of the library workspace above.
+packages: []
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - "@tailwindcss/oxide"
